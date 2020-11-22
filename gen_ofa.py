@@ -64,7 +64,10 @@ if __name__ == "__main__":
         description="Generate random off-facebook activity"
     )
     parser.add_argument(
-        "--applications", type=str, help="File containing a line-separated list of apps"
+        "--applications",
+        type=str,
+        required=True,
+        help="File containing a line-separated list of apps",
     )
     parser.add_argument(
         "--output",
