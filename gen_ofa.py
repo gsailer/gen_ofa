@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 MAX_EVENT_COUNT = 10
 # Facebook SDK standard events
 # https://developers.facebook.com/docs/facebook-pixel/reference#standard-events
-EVENT_TYPES = [
+STANDARD_EVENT_TYPES = [
     "ADD_PAYMENT_INFO",
     "ADD_TO_CART",
     "ADD_TO_WISHLIST",
@@ -25,6 +25,18 @@ EVENT_TYPES = [
     "SUBSCRIBE",
     "VIEW_CONTENT",
 ]
+EXTENDED_EVENT_TYPES = [
+    "CUSTOM",
+    "ADD_REQUEST",
+    "ACTIVATE_APP",
+    "AD_REQUEST",
+    "AD_IMPRESSION",
+    "GEN_RESPONSE",
+    "TOSIMPRESSION",
+    "NOT_AUTHORIZED",
+]
+
+EVENT_TYPES = list(set(STANDARD_EVENT_TYPES) | set(EXTENDED_EVENT_TYPES))
 
 
 def parse_appfile(location):
